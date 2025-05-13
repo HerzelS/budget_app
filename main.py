@@ -19,7 +19,7 @@ class CSV:
         except FileNotFoundError:
             # create file
             df = pd.DataFrame(columns=cls.COLUMNS)
-            # Xport the data frame to a csv file
+            # Export the data frame to a csv file
             df.to_csv(cls.CSV_FILE, index=False)
 
 

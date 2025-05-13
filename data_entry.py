@@ -2,6 +2,7 @@ from datetime import datetime
 
 date_format = "%d-%m-%Y"
 CATEGORIES = {"I": "Income", "E": "Expense"}
+SUB_CATEGORIES = {"f_1": "food", "u_1":"utilities"}
 
 def get_date(prompt, allow_default=False):
     date_str = input(prompt)
@@ -34,3 +35,23 @@ def get_category():
 
 def get_description():
     return input("Enter a description: ")
+
+
+def get_sub_category():
+    sub_category = input("Enter sub category: ").lower()
+    if sub_category in SUB_CATEGORIES:
+        return[sub_category.value()]
+    
+    print("Invalid response. Try again")
+    get_sub_category()
+
+
+def get_allocation():
+    pass
+
+def get_month():
+    d = get_date("please enter date: ", allow_default=True)
+
+
+for key, sub_category in SUB_CATEGORIES.items():
+        print(sub_category)
